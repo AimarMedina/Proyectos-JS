@@ -1,7 +1,5 @@
 # Ideas de proyectos para practicar HTML, CSS y JavaScript
 
-Vale Medina 😎, aquí van varias ideas de proyectos que puedes desarrollar solo con **HTML, CSS y JavaScript** (sin frameworks pesados) y que son muy útiles para practicar como junior:
-
 ---
 
 ## 🔹 Nivel básico (para practicar fundamentos)
@@ -62,9 +60,3 @@ Vale Medina 😎, aquí van varias ideas de proyectos que puedes desarrollar sol
 12. **Buscador de películas o series**  
     * Usar la API de OMDB.  
     * Mostrar carátula, título y descripción.
-
----
-
-👉 Lo bueno es que todos estos proyectos se pueden hacer **sin backend**, solo con **HTML, CSS y JS**, y si quieres luego puedes ir evolucionándolos (ejemplo: meter Node.js o una base de datos).  
-
-¿Quieres que te arme un **roadmap de proyectos en orden** (del más fácil al más pro) para que vayas escalando sin perderte? 🚀
