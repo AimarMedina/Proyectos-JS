@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>To-Do APP</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>To-Do APP</h1>
+      
+      <form id="taskForm">
+        <div class="filter">
+          <label for="filtro">Filtrar:</label>
+          <select name="filtro" id="filtro">
+            <option value="todas" selected>Todas</option>
+            <option value="activas">Activas</option>
+            <option value="completadas">Completadas</option>
+          </select>
+        </div>
+        <div class="addTask">
+            <input type="text" name="tarea" id="taskInput" />
+            <input type="submit" value="Agregar Tarea" id="addTask" />
+        </div>
+      </form>
+  
+      <ul id="taskList"></ul>
+      <p>Tareas activas:<span class="contador">0</span></p>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

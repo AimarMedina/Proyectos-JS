@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Generador de contraseñas seguras</title>
+
+</head>
+<body>
+    <h1>Generador de contraseñas seguras</h1>
+    <form>
+        <div class="longitud">
+            <label for="longitud">Longitud de la contraseña:</label>
+            <input type="range" id="longitud" min="4" max="40" value="4">
+            <span id="valorLongitud" contenteditable="true">4</span><br>
+        </div>
+
+        <div class="checkboxes">
+            <label for="letras">Letras:<input type="checkbox" name="opciones" id="opciones" value="letras"></label><br>
+            <label for="numeros">Números:<input type="checkbox" name="opciones" id="opciones" value="numeros"></label><br>
+            <label for="simbolos">Símbolos:<input type="checkbox" name="opciones" id="opciones" value="simbolos"></label><br>
+        </div>
+
+        <div class="botones">
+            <button class="generar">Generar</button>
+            <button class="eliminarContraseña">Eliminar Contraseña</button>
+        </div>
+    </form>
+    <p class="contraseñaGenerada">Contraseña generada:</p>
+    <script src="script.js"></script>
+</body>
+</html>

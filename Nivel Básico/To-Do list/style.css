@@ -1,0 +1,152 @@
+:root {
+  --color-fondo: #f9f9fb;
+  --color-texto: #2d3436;
+  --color-completado: #b2bec3;
+  --color-boton: #0984e3;
+  --color-boton-hover: #0870c0;
+  --color-acento: #d63031;
+  --color-acento-hover: #b91f1f;
+  --color-tarjeta: #ffffff;
+  --color-borde: #e0e0e0;
+  --sombra: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background: var(--color-fondo);
+  color: var(--color-texto);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 40px;
+}
+
+.container {
+  background: var(--color-tarjeta);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: var(--sombra);
+  width: 420px;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 1.8rem;
+}
+
+.filter {
+  margin-bottom: 20px;
+}
+
+select {
+  padding: 8px 12px;
+  font-weight: 600;
+  border: 1px solid var(--color-borde);
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+select:hover {
+  border-color: var(--color-boton);
+}
+
+.addTask {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+#taskInput {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid var(--color-borde);
+  border-radius: 8px;
+  outline: none;
+  transition: border 0.2s;
+}
+#taskInput:focus {
+  border-color: var(--color-boton);
+}
+
+#addTask {
+  background-color: var(--color-boton);
+  color: #fff;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+#addTask:hover {
+  background-color: var(--color-boton-hover);
+}
+
+#taskList {
+  list-style: none;
+  margin-top: 20px;
+}
+
+#taskList li {
+  background: var(--color-tarjeta);
+  border: 1px solid var(--color-borde);
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--sombra);
+  transition: transform 0.2s ease;
+}
+#taskList li:hover {
+  transform: translateY(-2px);
+}
+
+#taskList li.completada {
+  text-decoration: line-through;
+  color: var(--color-completado);
+  background: #f0f0f0;
+}
+
+.contador {
+  font-weight: bold;
+  margin-left: 5px;
+  color: var(--color-boton);
+}
+
+.eliminarTarea {
+  background: var(--color-acento);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s;
+}
+.eliminarTarea:hover {
+  background: var(--color-acento-hover);
+}
+
+/* Animación suave */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

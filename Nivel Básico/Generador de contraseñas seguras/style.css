@@ -1,0 +1,170 @@
+:root {
+    /* Colores */
+    --color-fondo: #f5f5f5;
+    --color-formulario: #ffffff;
+    --color-titulo: #1e1e2f;
+    --color-boton-principal: #4caf50;
+    --color-boton-principal-hover: #45a049;
+    --color-boton-secundario: #f44336;
+    --color-boton-secundario-hover: #e53935;
+    --color-texto-contraseña: #2196f3;
+    --color-bordes: #cccccc;
+
+    /* Tipografías */
+    --fuente-titulo: 'Montserrat', sans-serif;
+    --fuente-texto: 'Roboto', sans-serif;
+    --fuente-contraseña: 'Courier New', monospace;
+}
+
+* {
+    font-family: var(--fuente-texto);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-fondo);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    gap: 20px;
+}
+
+h1 {
+    color: var(--color-titulo);
+    font-family: var(--fuente-titulo);
+    font-size: 2em;
+}
+
+form {
+    background-color: var(--color-formulario);
+    padding: 25px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 450px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.generar,
+.eliminarContraseña {
+    cursor: pointer;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: none;
+    color: white;
+    font-family: var(--fuente-titulo);
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.generar {
+    background-color: var(--color-boton-principal);
+}
+
+.generar:hover {
+    background-color: var(--color-boton-principal-hover);
+    transform: scale(1.05);
+}
+
+.eliminarContraseña {
+    background-color: var(--color-boton-secundario);
+}
+
+.eliminarContraseña:hover {
+    background-color: var(--color-boton-secundario-hover);
+    transform: scale(1.05);
+}
+
+.contraseña {
+    cursor: pointer;
+    font-family: var(--fuente-contraseña);
+    color: var(--color-texto-contraseña);
+    font-size: 1.2em;
+    padding: 6px 10px;
+    border-radius: 6px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.contraseña:hover {
+    background-color: #dbeeff;
+    transform: scale(1.02);
+}
+
+
+.contraseña.generada {
+  background: #d1ffd1;
+  transform: scale(1.05);
+}
+
+.mensaje {
+    font-size: 0.85em;
+    position: absolute;
+    background: #333;
+    color: #fff;
+    padding: 5px 10px;
+    text-align: center;
+    border-radius: 6px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+.mensaje.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.longitud,
+.checkboxes {
+    margin: 10px 0;
+    padding: 15px;
+    background-color: #fafafa;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: #333;
+}
+
+#valorLongitud {
+    display: inline-block;
+    width: 50px;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid var(--color-bordes);
+    border-radius: 6px;
+    padding: 4px;
+    background-color: #fff;
+    cursor: text;
+}
+
+input[type="checkbox"] {
+    margin-left: 10px;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.checkboxes label {
+    margin-bottom: 8px;
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+}
+
+.checkboxes label:hover {
+    background-color: #e0e0e0;
+}
