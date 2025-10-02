@@ -16,10 +16,6 @@
    * Mostrar hora en tiempo real.  
    * Tema oscuro/claro con CSS.
 
-4. **Conversor de divisas o unidades**  
-   * Ejemplo: metros ↔ pies, °C ↔ °F.  
-   * O con una API de divisas real para hacerlo más pro.
-
 ---
 
 ## 🔹 Nivel intermedio (ya jugando con más lógica)

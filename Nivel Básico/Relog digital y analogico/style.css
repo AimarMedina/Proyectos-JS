@@ -1,0 +1,196 @@
+:root{
+    --digitalClock-ClareMode: rgb(139, 139, 139);
+    --digitalClock-FontFamily: clock;
+    --digitalClock-Date-Fontfamily: date ;
+}
+
+@font-face {
+  font-family: clock;
+  src: url(fonts/E1234-Regular.woff2);
+
+}
+@font-face {
+  font-family: date;
+  src: url(fonts/LibreFranklin-Thin.ttf);
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.relojes{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.digital{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: absolute;
+}
+
+.analogico{
+    position: absolute;
+}
+
+.horaExacta{
+    font-size: 6em;
+    font-family: var(--digitalClock-FontFamily);
+    font-weight: bold;
+    color: var(--digitalClock-ClareMode);
+}
+
+.horaExacta span{
+    display: inline-flex;
+    align-items: center;
+}
+
+.fecha{
+    font-size: 1.2em;
+    font-family: var(--digitalClock-Date-Fontfamily);
+    align-self: center;
+    padding: 0 10px;
+    padding-top: 5px;
+    position: relative;
+    cursor: pointer;
+}
+
+.fecha::after{
+    content: "";
+    position: absolute;
+    background-color: black;
+    width: 0%;
+    height: 2px;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+    transition: width .6s ease-in-out;
+}
+
+.fecha:hover::after{
+    width: 100%;
+}
+
+.reloj{
+    border-radius: 100%;
+    width: 400px;
+    height: 400px;
+    box-shadow: 0 0 5px;
+    position: relative;
+
+
+}
+
+.reloj::after{
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 100%;
+    background: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.manecillaHoras, .manecillaMinutos, .manecillaSegundos {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: bottom center;
+    border-radius: 4px;
+}
+
+.reloj .manecillaHoras {
+    width: 6px;
+    height: 80px;
+    background-color: black;
+}
+
+.reloj .manecillaMinutos {
+    width: 4px;
+    height: 110px;
+    background-color: black;
+}
+
+.reloj .manecillaSegundos {
+    width: 2px;
+    height: 140px;
+    background-color: red; /* mejor para diferenciarla */
+}
+
+.numero {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%) rotate(calc(30deg * var(--i) - 90deg)) translate(180px) rotate(calc(-30deg * var(--i) + 90deg));
+  font-size: 28px;
+  font-weight: bold;
+  color: black;
+}
+
+.cambiarTipoReloj{
+    position: absolute;
+    top: 25%;
+    right: 25%;
+}
+
+.show{
+    animation: mostrar .7s forwards;
+}
+
+.unshow{
+    animation: ocultar .7s forwards;
+}
+
+
+@keyframes mostrar {
+  0% {
+    transform: scale(0) translateX(0px);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(0.5) translateX(400px);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1) translateX(0);
+    opacity: 1;
+  }
+}
+
+
+@keyframes ocultar {
+  0% {
+    transform: scale(1) translateX(0);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(0.5) translateX(-400px);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(0) translateX(0);
+    opacity: 0;
+  }
+}
